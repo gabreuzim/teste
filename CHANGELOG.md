@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.0](https://github.com/gabreuzim/teste/compare/v2.0.0...v2.1.0) (2024-04-10)
+
+
+### Features
+
+* testando ([732648d](https://github.com/gabreuzim/teste/commit/732648d32eb122fa22a9e13a1f6d63ef1538e05b))
+
 ## [2.0.0](https://github.com/gabreuzim/teste/compare/v1.0.0...v2.0.0) (2024-04-10)
 
 
