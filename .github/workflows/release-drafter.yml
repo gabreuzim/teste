@@ -44,4 +44,4 @@ jobs:
 
       - name: teste
         run: |
-            echo "${{ steps.releaser.outputs.tag_name	}}
+            echo "${{ steps.releaser.outputs.tag_name	}}"
