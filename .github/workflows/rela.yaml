@@ -27,4 +27,7 @@ jobs:
         run: |
             echo "Major: ${{ steps.release.outputs.major }}"
             echo "Minor: ${{ steps.release.outputs.minor }}"
-            echo "Minor: ${{ steps.release.outputs.tag_name }}"
+            echo "Tag Name: ${{ steps.release.outputs.tag_name }}"
+            echo "Created release: ${{ steps.release.outputs.release_created }}"
+            echo "Patch: ${{ steps.release.outputs.patch }}"
+            echo "SHA: ${{ steps.release.outputs.sha }}"
