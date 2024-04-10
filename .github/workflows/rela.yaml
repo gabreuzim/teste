@@ -26,4 +26,5 @@ jobs:
       - name: tag major and minor versions
         run: |
             echo "Major: ${{ steps.release.outputs.major }}"
-            echo "Minor: ${{ steps.release.outputs.minor }} T"
+            echo "Minor: ${{ steps.release.outputs.minor }}"
+            echo "Minor: ${{ steps.release.outputs.tag_name }}"
