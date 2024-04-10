@@ -48,5 +48,5 @@ jobs:
             echo "TAG: ${{ steps.releaser.outputs.tag_name	}}"
             git config user.name github-actions[bot]
             git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-            git tag -d v${{ steps.releaser.outputs.tag_name }} || true
-            git push origin :v${{ steps.releaser.outputs.tag_name }} 
+            git tag -d ${{ steps.releaser.outputs.tag_name }} || true
+            git push origin :${{ steps.releaser.outputs.tag_name }} 
