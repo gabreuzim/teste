@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.1](https://github.com/gabreuzim/teste/compare/v2.1.0...v2.1.1) (2024-04-10)
+
+
+### Bug Fixes
+
+* skip release ([7496c51](https://github.com/gabreuzim/teste/commit/7496c519759bf1bb7365571e9ebf4e7362f53716))
+
 ## [2.1.0](https://github.com/gabreuzim/teste/compare/v2.0.0...v2.1.0) (2024-04-10)
 
 
