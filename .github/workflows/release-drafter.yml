@@ -1,34 +1,28 @@
-name: Release Drafter
-
 on:
   push:
-    # branches to consider in the event; optional, defaults to all
     branches:
       - main
-
-permissions:
-  contents: read
-
+name: release-please
 jobs:
-  update_release_draft:
-    permissions:
-      # write permission is required to create a github release
-      contents: write
-      # write permission is required for autolabeler
-      # otherwise, read permission is required at least
-      pull-requests: write
+  release-please:
     runs-on: ubuntu-latest
     steps:
-      # (Optional) GitHub Enterprise requires GHE_HOST variable set
-      #- name: Set GHE_HOST
-      #  run: |
-      #    echo "GHE_HOST=${GITHUB_SERVER_URL##https:\/\/}" >> $GITHUB_ENV
-
-      # Drafts your next Release notes as Pull Requests are merged into "master"
-      - uses: release-drafter/release-drafter@v5
-        # (Optional) specify config name to use, relative to .github/. Default: release-drafter.yml
-        # with:
-        #   config-name: my-config.yml
-        #   disable-autolabeler: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: google-github-actions/release-please-action@v4
+        id: release
+        with:
+          release-type: node
+      - uses: actions/checkout@v4
+      - name: tag major and minor versions
+        if: ${{ steps.release.outputs.release_created }}
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git remote add gh-token "https://${{ secrets.GITHUB_TOKEN }}@github.com/google-github-actions/release-please-action.git"
+          git tag -d v${{ steps.release.outputs.major }} || true
+          git tag -d v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }} || true
+          git push origin :v${{ steps.release.outputs.major }} || true
+          git push origin :v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }} || true
+          git tag -a v${{ steps.release.outputs.major }} -m "Release v${{ steps.release.outputs.major }}"
+          git tag -a v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }} -m "Release v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}"
+          git push origin v${{ steps.release.outputs.major }}
+          git push origin v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}
