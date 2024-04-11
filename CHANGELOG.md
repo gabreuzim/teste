@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.2.0](https://github.com/gabreuzim/teste/compare/v3.1.0...v3.2.0) (2024-04-11)
+
+
+### Features
+
+* tata ([6318bd6](https://github.com/gabreuzim/teste/commit/6318bd6881bfb0fd89bd4b81a0846e708e64d210))
+
 ## [3.1.0](https://github.com/gabreuzim/teste/compare/v3.0.0...v3.1.0) (2024-04-11)
 
 
