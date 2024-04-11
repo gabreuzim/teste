@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.1.0](https://github.com/gabreuzim/teste/compare/v3.0.0...v3.1.0) (2024-04-11)
+
+
+### Features
+
+* add release please ([5ded50a](https://github.com/gabreuzim/teste/commit/5ded50a801f92b55323f1393d22dd889f3da6a8e))
+* minor ([a4ea2e2](https://github.com/gabreuzim/teste/commit/a4ea2e2a44ffeeeeded1a6cb442e9625454429e9))
+
 ## [2.1.0](https://github.com/gabreuzim/teste/compare/v2.0.0...v2.1.0) (2024-04-10)
 
 
